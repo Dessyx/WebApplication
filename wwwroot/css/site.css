@@ -25,13 +25,17 @@ body {
     color: lightpink;
 }
 
+.search{
+    float: right;
+}
+
 div.picture-gallery {
     background-color: #333;
     overflow:auto;
     white-space:nowrap;
     padding: 10px;
     height:450px;
-    
+    width:950px;
 }
 
 div.picture-gallery img {
@@ -70,7 +74,7 @@ div.container .box-container{
 }
 
 .container .box-container .box img{
-    height:80px;
+    height:170px;
 }
 
 .container .box-container .box h3{
@@ -103,3 +107,112 @@ div.container .box-container{
             box-shadow:0 10px 15px rgba(0,0,0,.3);
             transform: scale(1.02);
         }
+
+        * {box-sizing: border-box;}
+
+        .input-container {
+            display:flex;
+            width: 100%;
+            margin-bottom:15px;
+        }
+
+        .icon{
+            padding: 10px;
+            background:tan;
+            color: white;
+            min-width:50px;
+            text-align:center;
+        }
+
+        .input-field{
+            width: 100%;
+            padding: 10px;
+            outline: none;
+            border: 2px solid tan;
+        }
+
+        .input-field:focus{
+            border: 2px solid black;
+        }
+
+        .btn{
+            background-color: tan;
+            color:white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            width:100%;
+            opacity:0.9;
+        }
+
+        .btn:hover{
+            opacity:1;
+        }
+
+       .column{
+           float:left;
+           width:33.3%;
+           margin-bottom:20px;
+           padding:0 8px;
+       }
+
+       .card{
+           box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+       }
+
+       .card img{
+           height:200px;
+           object-fit:cover;
+           width:100%;
+       }
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+    .container::after, .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+.title {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+    .button:hover {
+        background-color: #555;
+    }
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+.bordered-text{
+    border:2px solid tan;
+    padding:10px;
+    border-radius:5px;
+    colour: white;
+}
