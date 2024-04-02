@@ -1,0 +1,105 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.myClass {
+    color: lightpink;
+}
+
+div.picture-gallery {
+    background-color: #333;
+    overflow:auto;
+    white-space:nowrap;
+    padding: 10px;
+    height:450px;
+    
+}
+
+div.picture-gallery img {
+        padding: 10px;
+        width: 500px; 
+        height: 420px; 
+        object-fit: cover;
+}
+
+div.container {
+    padding:15px 9%;
+    padding-bottom:100px;    
+}
+
+    div.container .heading {
+        text-align:center;
+        padding-bottom:15px;
+        color: #fff;
+        text-shadow: 0 5px 10px rgba(0,0,0,.2);
+        font-size:50px;
+    }
+
+div.container .box-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+    grid-column-gap:20px;
+    grid-row-gap:10px;
+}
+
+.container .box-container .box{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius:5px;
+    background:#fff;
+    text-align:center;
+    padding:30px 20px;
+}
+
+.container .box-container .box img{
+    height:80px;
+}
+
+.container .box-container .box h3{
+    color:#444;
+    font-size:22px;
+    padding: 10px 0;
+}
+
+    .container .box-container .box p {
+        color: #777;
+        font-size: 15px;
+        line-height:1.8;
+    }
+
+    .container .box-container .box btn{
+        margin-top:10px;
+        display:inline-block;
+        background:#333;
+        color:dimgrey;
+        font-size:17px;
+        border-radius: 5px;
+        padding: 8px 25px;
+    }
+
+    .container .box-container .box btn:hover{
+        letter-spacing:1px;
+    }
+
+        .container .box-container .box:hover {
+            box-shadow:0 10px 15px rgba(0,0,0,.3);
+            transform: scale(1.02);
+        }
