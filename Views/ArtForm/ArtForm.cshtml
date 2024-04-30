@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "ArtForm";
+}
+
+<body style="margin: 0; padding: 0; background-image: url('https://i.pinimg.com/564x/0e/cb/18/0ecb187bdc4fd92a31f5a2c182bc2b5d.jpg'); background-size: cover; background-position: center;">
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div class="artwork-container">
+            <div class="title-form">
+                Product Details
+            </div>
+
+            <form action="/ArtForm/ArtForm" method="post">
+                <div class="product-details">
+
+                    <div class="input-box">
+                        <span class="details">Product Name</span>
+                        <input type="text" name="productName" placeholder="Enter the product name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Price</span>
+                        <input type="text" name="productPrice" placeholder="Enter the price" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Category</span>
+                        <input type="text" name="productCategory" placeholder="Enter a category" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Availability</span>
+                        <input type="text" name="productAvailability" placeholder="How much is in stock?" required>
+                    </div>
+
+                   
+                </div>
+
+                <div class="form-button">
+                    <input type="submit" value="Submit" />
+                </div>
+
+             </form> 
+        </div>
+    </div>
+</body>
