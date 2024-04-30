@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<body style="margin: 0; padding: 0; background-image: url('https://i.pinimg.com/564x/0e/cb/18/0ecb187bdc4fd92a31f5a2c182bc2b5d.jpg'); background-size: cover; background-position: center;">
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div class="register-container">
+            <div class="title-registration">
+                Sign up
+            </div>
+
+            <form action="/User/SignUp" method="post">
+                <div class="user-details">
+
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        <input type = "text" name="firstname" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Surname</span>
+                        <input type="text" name="surname" placeholder="Enter your surname" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Username</span>
+                        <input type="text" name="username" placeholder="Enter a username" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" name="userEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="text" name="userPassword" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Confirm Password</span>
+                        <input type="text" name="userPassword" placeholder="Re-enter your password" required>
+                    </div>
+
+                </div>
+
+                    <div class="register-button">
+                        <input type="submit" value="Register" />
+                    </div>
+
+            </form>
+        </div>
+
+    </div>
+</body>

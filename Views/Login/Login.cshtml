@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/css/Style.css">
+</head>
+
+<!--Code taken from CodePen.io by Vincent Van Goggles-->
+<div class="ring">
+    <i style="--clr:#33BEFF;"></i>
+    <i style="--clr:#148DFF;"></i>
+    <i style="--clr:#1458FF;"></i>
+  <div class="login">
+    <h2>Login</h2>
+
+        <style>
+            .inputBx {
+                margin-bottom: 17px; 
+            }
+
+                .inputBx input {
+                    padding: 20px; 
+                }
+        </style>
+
+    <form action="@Url.Action("Login","Login")" method="post">
+            <div class="inputBx">
+                <input type="text" placeholder="Username" name="username">
+            </div>
+
+            <div class="inputBx">
+                <input type="password" placeholder="Password" name="userPassword">
+            </div>
+
+            <div class="inputBx">
+                <input type="submit" value="Sign in">
+            </div>
+
+            <div class="links">
+                <a href="#">Forget Password</a>
+                <a href="/Home/SignUp">Signup</a>
+            </div>
+    </form>
+    
+  </div>
+   
+</div>
+
+@* <div class="card">
+    <div class="container">
+        Magic Card
+    </div>
+</div> *@
+<!--Ends here-->
+
+
+</html>
+
+	        	@* REFERENCES *@
+@* Goggles, V. V., 2024. Animated Login Form - CSS. [Online]
+Available at: https://www.codewithfaraz.com/article/126/30-login-form-collection-with-source-code-in-html-css-and-javascript
+[Accessed 23 April 2024]. *@
+
