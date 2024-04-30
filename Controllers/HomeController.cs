@@ -23,12 +23,35 @@ namespace WebApplicationLesson1.Controllers
             return View();
         }
 
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
         public IActionResult ContactUs()  //Make another page
         {
             return View();
         }
 
-        public IActionResult MyWork()  //Make another page
+/*        public IActionResult MyWork()  //Make another page
+        {
+
+            return View();
+        }*/
+
+
+        public IActionResult SignUp()  //Make another page
+        {
+            return View();
+        }
+
+        public IActionResult Login()  //Make another page
+        {
+            return View();
+        }
+
+
+        public IActionResult ArtForm()  //Make another page
         {
             return View();
         }
