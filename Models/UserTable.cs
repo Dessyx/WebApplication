@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Azure.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 using System.Data.SqlClient;
 
@@ -53,7 +54,37 @@ namespace WebApplicationLesson1.Models
 
         }
 
+       /* public int GetUserID(string username, string userPassword)
+        {
+            try
+            {
+                con.Open();
+                string sql = "SELECT userID FROM UserTable WHERE username = @username AND userPassword = @userPassword";
+                SqlCommand cmd = new SqlCommand(sql, con);
 
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@userPassword", userPassword);
+               
+                int result = cmd.ExecuteScalar();
+
+                con.Close();
+
+                if (result != null)
+                {
+                    return Convert.ToInt32(result);
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it appropriately
+                // For now, return -1 to indicate login failure
+                return -1;
+            }
+        }*/
 
         public bool Login(string username, string userPassword)
         {
@@ -91,6 +122,34 @@ namespace WebApplicationLesson1.Models
             {
                 return "customer";
             }
+        }
+
+        public int SelectUser(string username, string userPassword)
+        {
+            int userID = -1; // Default value if user is not found
+            using (SqlConnection con = new SqlConnection(con_string))
+            {
+                string sql = "SELECT userID FROM UserTable WHERE username = @username AND userPassword = @userPassword";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@userPassword", userPassword);
+                try
+                {
+                    con.Open();
+                    object result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        userID = Convert.ToInt32(result);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception or handle it appropriately
+                    // For now, rethrow the exception
+                    throw ex;
+                }
+            }
+            return userID;
         }
 
 

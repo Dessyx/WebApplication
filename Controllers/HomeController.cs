@@ -7,15 +7,20 @@ namespace WebApplicationLesson1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
+            _httpContextAccessor = httpContextAccessor; // Initialize IHttpContextAccessor
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int userID, string userType)
         {
-            return View();
+           // int? userID = _httpContextAccessor.HttpContext.Session.GetInt32("userID");
+            ViewBag.UserType = userType;
+            ViewBag.UserID = userID;
+            return View(new TransactionTable());
         }
 
         public IActionResult AboutUs()

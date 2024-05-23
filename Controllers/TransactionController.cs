@@ -8,13 +8,22 @@ namespace WebApplicationLesson1.Controllers
     {
    
         public TransactionTable tTable = new TransactionTable();
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public TransactionController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor; // Initialize IHttpContextAccessor
+        }
+
 
         [HttpPost]
-        public ActionResult MyWork( int userID, int productID)
+        public ActionResult MyWork(int userID, int productID)
         {
-            var result = tTable.PlaceOrder( userID, productID);
+            int? user = _httpContextAccessor.HttpContext.Session.GetInt32("UserID");
+            var result = tTable.PlaceOrder(user.GetValueOrDefault(), productID);
+           /* var result2 = tTable.GetPastOrders(userID); *//*+*/
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Details", "MyWork");
         }
 
         [HttpGet]

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model TransactionTable
+
+@{
     ViewData["Title"] = "ArtForm";
 }
 
@@ -42,4 +44,47 @@
              </form> 
         </div>
     </div>
+
+    <div class="process-order">
+        <div class="title-form">
+            Client Orders
+        </div>
+        <div class="table">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>First Name</th>
+                        <th>Surname</th>
+                        <th>Email</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Product Category</th>
+                        <th>Product Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var transactionDetails = Model.GetTransactionDetails();
+                        foreach (var row in transactionDetails)
+                        {
+                            <tr>
+                                <td>@row["orderID"].ToString()</td>
+                                <td>@row["firstname"].ToString()</td>
+                                <td>@row["surname"].ToString()</td>
+                                <td>@row["userEmail"].ToString()</td>
+                                <td>@row["productName"].ToString()</td>
+                                <td>@row["productPrice"].ToString()</td>
+                                <td>@row["productCategory"].ToString()</td>
+                                <td>@row["productAvailability"].ToString()</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
 </body>

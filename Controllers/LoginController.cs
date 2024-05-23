@@ -10,7 +10,7 @@ namespace WebApplicationLesson1.Controllers
         public string errorHeading;
         public string errorMessage;
         public UserTable uTable = new UserTable();
-
+        
         public IActionResult Login()
         {
             return View();
@@ -32,16 +32,19 @@ namespace WebApplicationLesson1.Controllers
 
             bool isValidLogin = uTable.Login(username, userPassword);
             string userType = uTable.GetUserType(username, userPassword);
+            int userID = uTable.SelectUser(username, userPassword);
+            HttpContext.Session.SetInt32("UserID", userID);
 
             if (isValidLogin)
             {
                 if(userType == "admin")
                 {
-                    return RedirectToAction("ArtForm", "ArtForm");
+                   
+                    return RedirectToAction("ArtForm", "ArtForm", new { userID = userID, userType = userType });
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home", new { userID = userID, userType = userType });
                 }
                
             }

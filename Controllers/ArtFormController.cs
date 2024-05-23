@@ -9,16 +9,18 @@ namespace WebApplicationLesson1.Controllers
 
 
 
-        public ActionResult ArtForm(ProductTable p)  //connected to about page - sign up must be on another page not about 
+        public ActionResult ArtForm(int userID,string userType, ProductTable p)  
         {
             var result = artwork.insert_product(p);
-            return RedirectToAction("Privacy", "Home");
+            return RedirectToAction("MyWork", "MyWork");
         }
 
         [HttpGet]
-        public ActionResult ArtForm()
+        public ActionResult ArtForm(int userID, string userType)
         {
-            return View(artwork);  //directs back to privacy page 
+            ViewBag.UserType = userType;
+            ViewBag.UserID = userID;
+            return View(new TransactionTable());  
         }
 
 
