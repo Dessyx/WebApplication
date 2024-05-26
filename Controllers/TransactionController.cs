@@ -21,7 +21,6 @@ namespace WebApplicationLesson1.Controllers
         {
             int? user = _httpContextAccessor.HttpContext.Session.GetInt32("UserID");
             var result = tTable.PlaceOrder(user.GetValueOrDefault(), productID);
-           /* var result2 = tTable.GetPastOrders(userID); *//*+*/
 
             return RedirectToAction("Details", "MyWork");
         }

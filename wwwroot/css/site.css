@@ -37,6 +37,7 @@ body {
     top: 0;
     left: 0;
     background-color: black; /* Black*/
+    color: white; /* Text color */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
@@ -54,7 +55,7 @@ body {
 
         /* When you mouse over the navigation links, change their color */
         .sidebar a:hover {
-            color: #f1f1f1;
+            color: deepskyblue;
         }
 
     /* Position and style the close button (top right corner) */
@@ -195,6 +196,8 @@ div.picture-gallery img {
 }
 
 /*<!-- Code from -->*/
+
+
 
 div.container {
     padding:15px 9%;
@@ -378,7 +381,7 @@ div.container .box-container{
     border-radius: 30px;
     border-style:solid;
     border-width:medium;
-    border-color:hotpink;
+    border-color:deepskyblue;
 }
 
 .title-registration{
@@ -439,7 +442,7 @@ form .register-button input{
     color: black;
     border: none;
     border-radius: 5px;
-    background: pink;
+    background: deepskyblue;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -459,7 +462,7 @@ form .register-button input{
     border-radius: 30px;
     border-style: solid;
     border-width: medium;
-    border-color: hotpink;
+    border-color: deepskyblue;
 }
 
 .title-form {
@@ -519,7 +522,7 @@ form .form-button {
         color: black;
         border: none;
         border-radius: 5px;
-        background: pink;
+        background: deepskyblue;
         font-size: 18px;
         font-weight: 500;
         letter-spacing: 1px;

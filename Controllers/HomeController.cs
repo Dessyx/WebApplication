@@ -38,12 +38,7 @@ namespace WebApplicationLesson1.Controllers
             return View();
         }
 
-/*        public IActionResult MyWork()  //Make another page
-        {
-
-            return View();
-        }*/
-
+ 
 
         public IActionResult SignUp()  //Make another page
         {

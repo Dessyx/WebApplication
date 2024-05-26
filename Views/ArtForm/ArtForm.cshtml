@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "ArtForm";
+    var userID = ViewData["userID"];
 }
 
 <body style="margin: 0; padding: 0; background-image: url('https://i.pinimg.com/564x/0e/cb/18/0ecb187bdc4fd92a31f5a2c182bc2b5d.jpg'); background-size: cover; background-position: center;">
@@ -77,6 +78,7 @@
                                 <td>@row["productPrice"].ToString()</td>
                                 <td>@row["productCategory"].ToString()</td>
                                 <td>@row["productAvailability"].ToString()</td>
+                                
                             </tr>
                         }
                     }

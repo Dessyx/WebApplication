@@ -49,12 +49,5 @@ namespace WebApplicationLesson1.Models
 
         }
 
-
-        
-
-
     }
 }
-
-
-//product availability - bit (1 or 0 - true or false) SQL database

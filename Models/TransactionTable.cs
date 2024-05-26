@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Humanizer;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using NuGet.Protocol.Plugins;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -19,22 +22,22 @@ namespace WebApplicationLesson1.Models
         {
             try
             {
-               // int? userID = _httpContextAccessor.HttpContext.Session.GetInt32("UserID");
+                // int? userID = _httpContextAccessor.HttpContext.Session.GetInt32("UserID");
                 string sql = "INSERT INTO TransactionTable (userID, productID) VALUES (@userID, @productID)";
 
 
-                    using (SqlCommand cmd = new SqlCommand(sql, con))
-                    {
-                        
-                        cmd.Parameters.AddWithValue("@userID", userID);
-                        cmd.Parameters.AddWithValue("@productID", productID);
-                        con.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        con.Close();
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
 
-                        return rowsAffected;
-                    }
-                
+                    cmd.Parameters.AddWithValue("@userID", userID);
+                    cmd.Parameters.AddWithValue("@productID", productID);
+                    con.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    return rowsAffected;
+                }
+
             }
             catch (Exception ex)
             {
@@ -116,21 +119,9 @@ namespace WebApplicationLesson1.Models
             }
         }
 
+
+
+
+
     }
-
-
-
-
-
-
-
-
-
-    /*    public int ChangeStatus()
-        {
-
-
-
-
-        }*/
 }
