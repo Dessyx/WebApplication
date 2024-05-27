@@ -25,6 +25,7 @@ namespace WebApplicationLesson1.Controllers
             return RedirectToAction("Details", "MyWork");
         }
 
+
         [HttpGet]
         public ActionResult MyWork()
         {

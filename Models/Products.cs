@@ -24,7 +24,7 @@ namespace WebApplicationLesson1.Models
 
         public void FetchData()
         {
-            if (product.Count > 0) /*clears previous records so that theres no duplicates*/
+            if (product.Count > 0) 
             {
                 product.Clear();
             }

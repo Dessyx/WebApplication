@@ -33,10 +33,10 @@ namespace WebApplicationLesson1.Controllers
             return View(product);
         }
 
-        public IActionResult Details(int userID)
+        public IActionResult Details()
         {
-           /* int? user = _httpContextAccessor.HttpContext.Session.GetInt32("userID");*/
-            ViewBag.UserID = userID;
+            int? userID = _httpContextAccessor.HttpContext.Session.GetInt32("UserID");
+            ViewBag.UserID = userID.GetValueOrDefault();
             return View(new TransactionTable());
         }
 

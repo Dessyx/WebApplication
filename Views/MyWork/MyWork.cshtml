@@ -154,7 +154,18 @@
                             <div class="ag-courses-item_date-box">
                                 Price:
                                 <span class="ag-courses-item_date">
-                                    @p.productPrice
+                                    @{
+                                        if (decimal.TryParse(p.productPrice, out var price))
+                                        {
+                                            @price.ToString("F2")
+                                            ;
+                                        }
+                                        else
+                                        {
+                                            @p.productPrice
+                                            ;
+                                        }
+                                    }
                                 </span>
                             </div>
                             <div class="ag-courses-item_date-box">
@@ -183,8 +194,8 @@
 </body>
 </html>
 
-                                <!--REFERENCES-->
-<!--Net, W., 2022. Item Hover Color Backgroun. [Online]
+                   <!--REFERENCES-->
+<!--Net, W., 2022. Item Hover Color Background. [Online]
 Available at: https://codepen.io/wikyware-net/pen/dyKPRxQ
 [Accessed 26 May 2024].
 -->

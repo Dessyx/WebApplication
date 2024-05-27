@@ -75,10 +75,9 @@
                                 <td>@row["surname"].ToString()</td>
                                 <td>@row["userEmail"].ToString()</td>
                                 <td>@row["productName"].ToString()</td>
-                                <td>@row["productPrice"].ToString()</td>
+                                <td>@(Convert.ToDecimal(row["productPrice"]).ToString("F2"))</td>
                                 <td>@row["productCategory"].ToString()</td>
-                                <td>@row["productAvailability"].ToString()</td>
-                                
+                                <td>@row["productAvailability"].ToString()</td>                       
                             </tr>
                         }
                     }

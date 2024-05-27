@@ -9,6 +9,8 @@ namespace WebApplicationLesson1.Controllers
 
         public string errorHeading;
         public string errorMessage;
+        public bool isValidLogin;
+        public bool loggedIn;
         public UserTable uTable = new UserTable();
         
         public IActionResult Login()
@@ -30,7 +32,7 @@ namespace WebApplicationLesson1.Controllers
                 return RedirectToAction("Login", "Login");
             }
 
-            bool isValidLogin = uTable.Login(username, userPassword);
+            isValidLogin = uTable.Login(username, userPassword);
             string userType = uTable.GetUserType(username, userPassword);
             int userID = uTable.SelectUser(username, userPassword);
             HttpContext.Session.SetInt32("UserID", userID);
@@ -39,17 +41,19 @@ namespace WebApplicationLesson1.Controllers
             {
                 if(userType == "admin")
                 {
-                   
+                    HttpContext.Session.SetString("LoggedIn", "true");
                     return RedirectToAction("ArtForm", "ArtForm", new { userID = userID, userType = userType });
                 }
                 else
                 {
+                    HttpContext.Session.SetString("LoggedIn", "true");
                     return RedirectToAction("Index", "Home", new { userID = userID, userType = userType });
                 }
                
             }
             else
             {
+                HttpContext.Session.SetString("LoggedIn", "false");
                 errorHeading = "Incorrect Credentials!";
                 errorMessage = "Please enter your username and password.";
                 return RedirectToAction("Login", "Login");
