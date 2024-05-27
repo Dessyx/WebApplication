@@ -1,10 +1,16 @@
-﻿@{
+﻿
+@model TransactionTable
+
+@{
     ViewData["Title"] = "Home Page";
+    var UserID = ViewData["userID"];
+    var UserType = ViewData["userType"];
 }
+<!--From tidio-->
+<script src="//code.tidio.co/8bcbgk1wb1g1atxa5he7gzqktl9qfdlq.js" async></script>
+<!--Till here-->
 
-
-
-<body style="margin: 0; padding: 0; background-image: url('https://i.pinimg.com/564x/0e/cb/18/0ecb187bdc4fd92a31f5a2c182bc2b5d.jpg'); background-size: cover; background-position: center;">
+<body class="home-page" style="margin: 0; padding: 0; background-image: url('https://i.pinimg.com/564x/0e/cb/18/0ecb187bdc4fd92a31f5a2c182bc2b5d.jpg'); background-size: cover; background-position: center;">
     <div class="container">
         
         <div class="text-center" style="color:tan">
@@ -19,8 +25,53 @@
             <img src="~/Images/pot.jpg" />        <!--From www.wholesaleblades.com-->
             <img src="~/Images/glassArt.jpg" />   <!--From timcarey.com-->
         </div>
-       
+
+        <div style="text-align: center; padding-top: 20px;">
+            <a href="/MyWork/MyWork" class="button-85" style="margin-right: 20px;">Order</a>
+            <a href="/Mywork/Details" class="button-85" style="margin-right: 15px;">Past Orders</a>
+        </div>
+
+
     </div>
+
+
+@* 
+    <div class="table">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Category</th>
+                    <th>Product Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    if (Model != null)
+                    {
+                        var transactionDetails = Model.GetPastOrders(UserID.ToString());
+                        foreach (var row in transactionDetails)
+                        {
+                            <tr>
+                                <td>@row["orderID"].ToString()</td>
+                                <td>@row["productName"].ToString()</td>
+                                <td>@row["productPrice"].ToString()</td>
+                                <td>@row["productCategory"].ToString()</td>
+                                <td>@row["productAvailability"].ToString()</td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+ *@
+
+
 
     <!--
                          REFERENCING

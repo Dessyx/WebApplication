@@ -1,0 +1,201 @@
+﻿<!doctype html>
+<html lang="en">
+@model Products
+
+@{
+    ViewData["Title"] = "MyWork";
+    var userID = ViewData["userID"]; 
+    var userType = ViewData["userType"];
+    Products product = new Products();
+    UserTable user = new UserTable();
+
+    string[] TableHeaders = new string[]
+    {
+        "Product ID",
+        "Product",
+        "Price",
+        "Category",
+        "Availability"
+    };
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    
+    
+    <!--Code taken from Wikyware Net (CodePen.io.com)-->
+    <style>
+        .ag-format-container {
+            width: 1142px;
+            margin: 0 auto;
+        }
+
+        body {
+            background-color: #000;
+        }
+
+        .ag-courses_box {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 50px 0;
+        }
+
+        .ag-courses_item {
+            flex-basis: calc(33.33333% - 30px);
+            margin: 0 15px 30px;
+            overflow: hidden;
+            border-radius: 28px;
+        }
+
+        .ag-courses-item_link {
+            display: block;
+            padding: 30px 20px;
+            background-color: #121212;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .ag-courses-item_title {
+            min-height: 87px;
+            margin: 0 0 25px;
+            overflow: hidden;
+            font-weight: bold;
+            font-size: 30px;
+            color: #FFF;
+            z-index: 2;
+            position: relative;
+        }
+
+        .ag-courses-item_date-box {
+            font-size: 18px;
+            color: #FFF;
+            z-index: 2;
+            position: relative;
+        }
+
+        .ag-courses-item_date {
+            font-weight: bold;
+            color: aliceblue;
+            transition: color .5s ease;
+        }
+
+        .ag-courses-item_bg {
+            height: 128px;
+            width: 128px;
+            background-color: deepskyblue;
+            z-index: 1;
+            position: absolute;
+            top: -75px;
+            right: -75px;
+            border-radius: 50%;
+            transition: all .5s ease;
+        }
+
+        .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+            background-color: deepskyblue;
+        }
+
+        .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+            background-color: deepskyblue;
+        }
+
+        .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+            background-color: deepskyblue;
+        }
+
+        .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+            background-color: deepskyblue;
+        }
+
+        .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+            background-color: deepskyblue;
+        }
+    </style>
+    <text>
+        <style>
+           
+
+                .ag-courses-item_title {
+                    min-height: 72px;
+                    line-height: 1;
+                    font-size: 24px;
+                }
+
+                .ag-courses-item_link {
+                    padding: 22px 40px;
+                }
+
+                .ag-courses-item_date-box {
+                    font-size: 16px;
+                }
+            }
+        </style>
+    </text>
+    <!--Till here-->
+</head>
+
+<body style="margin: 0; padding: 0; background-image: url('https://i.pinimg.com/564x/0e/cb/18/0ecb187bdc4fd92a31f5a2c182bc2b5d.jpg'); background-size: cover; background-position: center;">
+    <div class="ag-format-container">
+        <div class="ag-courses_box">
+            @if (Model.product != null)
+            {
+                foreach (var p in Model.product)
+                {
+                    <div class="ag-courses_item">
+                        <a href="#" class="ag-courses-item_link">
+                            <div class="ag-courses-item_bg"></div>
+                            <div class="ag-courses-item_title">
+                                @p.productName
+                            </div>
+                            <div class="ag-courses-item_date-box">
+                                Price:
+                                <span class="ag-courses-item_date">
+                                    @{
+                                        if (decimal.TryParse(p.productPrice, out var price))
+                                        {
+                                            @price.ToString("F2")
+                                            ;
+                                        }
+                                        else
+                                        {
+                                            @p.productPrice
+                                            ;
+                                        }
+                                    }
+                                </span>
+                            </div>
+                            <div class="ag-courses-item_date-box">
+                                Category:
+                                <span class="ag-courses-item_date">
+                                    @p.productCategory
+                                </span>
+                            </div>
+                            <div class="ag-courses-item_date-box">
+                                Availability:
+                                <span class="ag-courses-item_date">
+                                    @p.productAvailability
+                                </span>
+                            </div>
+                            <form asp-controller="Transaction" asp-action="MyWork" method="post" style="margin-top: 15px;">
+                                <input type="hidden" name="userID" value="@userID" />
+                                <input type="hidden" name="productID" value="@p.productID" />
+                                <button type="submit" style="background-color: deepskyblue; color: #FFF; border: none; padding: 10px 20px; border-radius: 5px;">Place Order</button>
+                            </form>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</body>
+</html>
+
+                   <!--REFERENCES-->
+<!--Net, W., 2022. Item Hover Color Background. [Online]
+Available at: https://codepen.io/wikyware-net/pen/dyKPRxQ
+[Accessed 26 May 2024].
+-->

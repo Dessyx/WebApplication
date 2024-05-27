@@ -1,0 +1,43 @@
+﻿@model TransactionTable
+
+@{
+    ViewData["Title"] = "Details";
+    var UserID = ViewData["userID"];
+
+}
+
+<body style="margin: 0; padding: 0; background-image: url('https://i.pinimg.com/564x/4b/c5/a8/4bc5a864bc7cb0cffbee7b40e28f7c02.jpg'); background-size: cover; background-position: center;">
+
+
+<div class="table">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Category</th>
+                <th>Product Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model != null)
+                {
+                    var transactionDetails = Model.GetPastOrders(UserID.ToString());
+                    foreach (var row in transactionDetails)
+                    {
+                        <tr>
+                            <td>@row["orderID"].ToString()</td>
+                            <td>@row["productName"].ToString()</td>
+                            <td>@string.Format("{0:F2}", row["productPrice"])</td>
+                            <td>@row["productCategory"].ToString()</td>
+                            <td>@row["productAvailability"].ToString()</td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
+</body>

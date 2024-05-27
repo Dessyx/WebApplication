@@ -30,34 +30,33 @@ body {
 /*<!-- Code taken from W3Schools-- >*/
 
 .sidebar {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
     top: 0;
     left: 0;
-    background-color: black; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    background-color: black;
+    color: white !important;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
 }
 
-    /* The sidebar links */
     .sidebar a {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
         font-size: 25px;
-        color: whitesmoke;
+        color: white !important;
         display: block;
         transition: 0.3s;
     }
 
-        /* When you mouse over the navigation links, change their color */
+        
         .sidebar a:hover {
-            color: #f1f1f1;
+            color: deepskyblue !important;
         }
 
-    /* Position and style the close button (top right corner) */
     .sidebar .closebtn {
         position: absolute;
         top: 0;
@@ -66,7 +65,7 @@ body {
         margin-left: 50px;
     }
 
-/* The button used to open the sidebar */
+
 .openbtn {
     font-size: 20px;
     cursor: pointer;
@@ -80,13 +79,13 @@ body {
         background-color: red;
     }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
 #main {
-    transition: margin-left .5s; /* If you want a transition effect */
+    transition: margin-left .5s; 
     padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
 @media screen and (max-height: 450px) {
     .sidebar {
         padding-top: 15px;
@@ -131,8 +130,14 @@ div.picture-gallery img {
         object-fit: cover;
 }
 
+body.home-page .container {
+    background-color: transparent; 
+    border: none;
+    padding: 20; 
+}
 
-/*<!-- Code from -->*/
+
+/*<!-- Code from CSS Scan-->*/
 
 .button-85 {
     margin-top: 15px;
@@ -194,9 +199,11 @@ div.picture-gallery img {
     border-radius: 10px;
 }
 
-/*<!-- Code from -->*/
+/*<!-- Till here -->*/
 
-/*div.container {
+
+
+div.container {
     padding:15px 9%;
     padding-bottom:100px;    
 }
@@ -259,9 +266,17 @@ div.container .box-container{
             transform: scale(1.02);
         }
 
-        * {box-sizing: border-box;}*/
+        * {box-sizing: border-box;}
 
-        /*.input-container {
+       /* Contact form*/
+
+        body.contact-page .container {
+            background-color: transparent; 
+            border: none;
+            padding: 20px; 
+        }
+
+        .input-container {
             display:flex;
             width: 100%;
             margin-bottom:15px;
@@ -280,15 +295,15 @@ div.container .box-container{
             padding: 10px;
             outline: none;
             border: 2px solid tan;
-        }*/
-/*
+        }
+
         .input-field:focus{
             border: 2px solid black;
         }
 
         .btn{
             background-color: tan;
-            color:white;
+            color:tan;
             padding: 15px 20px;
             border: none;
             cursor: pointer;
@@ -315,7 +330,7 @@ div.container .box-container{
            height:200px;
            object-fit:cover;
            width:100%;
-       }*/
+       }
 
 .about-section {
     padding: 50px;
@@ -337,7 +352,9 @@ div.container .box-container{
 .title {
     color: white;
 }
-
+.about-section .h2 {
+    color: black;
+}
 .button {
     border: none;
     outline: 0;
@@ -378,7 +395,7 @@ div.container .box-container{
     border-radius: 30px;
     border-style:solid;
     border-width:medium;
-    border-color:hotpink;
+    border-color:deepskyblue;
 }
 
 .title-registration{
@@ -439,7 +456,7 @@ form .register-button input{
     color: black;
     border: none;
     border-radius: 5px;
-    background: pink;
+    background: deepskyblue;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -459,7 +476,7 @@ form .register-button input{
     border-radius: 30px;
     border-style: solid;
     border-width: medium;
-    border-color: hotpink;
+    border-color: deepskyblue;
 }
 
 .title-form {
@@ -519,14 +536,175 @@ form .form-button {
         color: black;
         border: none;
         border-radius: 5px;
-        background: pink;
+        background: deepskyblue;
         font-size: 18px;
         font-weight: 500;
         letter-spacing: 1px;
     }
 
 
+
+  /* Table */
+
+.table {
+    background: #fff;
+    max-height: 470px;
+    overflow-y: auto;
+    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+    .table thead th,
+    .table tbody td {
+        padding: 15px;
+        border: none;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .table thead th {
+        background-color: black;
+        color: deepskyblue;
+        font-size: 16px;
+        position: sticky;
+        top: 0; 
+        z-index: 1; 
+    }
+
+.row {
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+.col-25 {
+    -ms-flex: 25%; 
+    flex: 25%;
+}
+
+.col-50 {
+    -ms-flex: 50%; 
+    flex: 50%;
+}
+
+.col-75 {
+    -ms-flex: 75%; 
+    flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+    padding: 0 16px;
+}
+
+.container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+.btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+span.price {
+    float: right;
+    color: white;
+}
+
+
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+
+    .col-25 {
+        margin-bottom: 20px;
+    }
+}
+
+
+.table .body{
+    font-family: sans-serif;
+    display: flex;
+background: white;
+align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color:white;
+}
+
+.table{
+    background: #fff;
+    max-height: 470px;
+    overflow-y: auto;
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0.5);
+    border-radius:10px;
+}
+
+.table thead th,
+table tbody td{
+    padding: 15px;
+    border: none;
+    font-weight:600;
+    font-size: 14px;
+}
+
+table thead th{
+    background-color: tan;
+    color: deepskyblue;
+    font-size:16px;
+    position: sticky;
+    top: -1%;
+}
+
+table tbody td {
+    border-bottom: solid rgba(0,0,0.1);
+
+}
+
               /* REFERENCES*/
 /*W3Schools, 2024. How TO - Collapse Sidebar. [Online]
 Available at: https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp
-[Accessed 25 April 2024].*/
+[Accessed 25 April 2024].
+
+CSS Scan, 2024. Beautiful CSS buttons examples. [Online] 
+Available at: https://getcssscan.com/css-buttons-examples
+[Accessed 20 May 2024].
+
+*/
