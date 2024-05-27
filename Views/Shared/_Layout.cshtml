@@ -21,9 +21,9 @@
 <body>
 
     
-
+   @*  Line used from Microsoft *@
     @if (HttpContextAccessor.HttpContext.Session.GetString("LoggedIn") != null && HttpContextAccessor.HttpContext.Session.GetString("LoggedIn") == "true")
-    {
+    { 
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -60,3 +60,10 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+       @*  REFERENCES 
+Microsoft, 2024. Session and state management in ASP.NET Core. [Online]
+Available at: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/app-state?view=aspnetcore-8.0
+[Accessed 27 May 2024].
+
+       *@

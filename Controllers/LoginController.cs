@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
+using Mono.TextTemplating;
+using System.ComponentModel.DataAnnotations;
 using WebApplicationLesson1.Models;
+using static System.Net.WebRequestMethods;
 
 namespace WebApplicationLesson1.Controllers
 {
@@ -41,28 +44,30 @@ namespace WebApplicationLesson1.Controllers
             {
                 if(userType == "admin")
                 {
-                    HttpContext.Session.SetString("LoggedIn", "true");
+                    HttpContext.Session.SetString("LoggedIn", "true");  // Line used from Microsoft, 2024
                     return RedirectToAction("ArtForm", "ArtForm", new { userID = userID, userType = userType });
                 }
                 else
                 {
-                    HttpContext.Session.SetString("LoggedIn", "true");
+                    HttpContext.Session.SetString("LoggedIn", "true"); // Line used from Microsoft, 2024
                     return RedirectToAction("Index", "Home", new { userID = userID, userType = userType });
                 }
                
             }
             else
             {
-                HttpContext.Session.SetString("LoggedIn", "false");
+                HttpContext.Session.SetString("LoggedIn", "false"); // Line used from Microsoft, 2024
                 errorHeading = "Incorrect Credentials!";
                 errorMessage = "Please enter your username and password.";
                 return RedirectToAction("Login", "Login");
-
             }
         }
 
 
     }
 
-
+    //          REFERENCES
+   /* Microsoft, 2024. Session and state management in ASP.NET Core. [Online]
+Available at: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/app-state?view=aspnetcore-8.0
+[Accessed 27 May 2024].*/
 }
